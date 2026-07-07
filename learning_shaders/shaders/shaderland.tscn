@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://cwocppkcv0qdd"]
+
+[ext_resource type="Texture2D" uid="uid://c7s6k1d68kgj0" path="res://shaders/2a2ea32d08cb7e46a7d62a527acd3566.jpg" id="1_gn5xu"]
+[ext_resource type="Texture2D" uid="uid://d28j5jplai1rv" path="res://icon.svg" id="3_3ofpl"]
+[ext_resource type="Texture2D" uid="uid://bn88n7ljvhbh6" path="res://shaders/images.png" id="4_ve1ex"]
+[ext_resource type="Script" path="res://shaders/circu.gd" id="5_xqmah"]
+[ext_resource type="Shader" uid="uid://dwatve7ft04i5" path="res://visu_blend1.tres" id="6_4r3xb"]
+[ext_resource type="Script" path="res://shaders/masked_line2d.gd" id="7_74ii8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y00tq"]
+shader = ExtResource("6_4r3xb")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/check_for = Color(1, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lv4on"]
+shader = ExtResource("6_4r3xb")
+shader_parameter/line_color = Color(0.594149, 0.174657, 0.217808, 1)
+shader_parameter/check_for = Color(0.0588235, 0.384314, 0.47451, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(1.955, 1.955)
+
+[node name="2a2Ea32d08Cb7e46a7d62a527Acd3566" type="Sprite2D" parent="."]
+position = Vector2(480, 176)
+texture = ExtResource("1_gn5xu")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_y00tq")
+position = Vector2(656, 101)
+texture = ExtResource("3_3ofpl")
+
+[node name="Icon" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(828, 47)
+texture = ExtResource("3_3ofpl")
+
+[node name="Images" type="Sprite2D" parent="."]
+position = Vector2(1034, 90)
+texture = ExtResource("4_ve1ex")
+
+[node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("polygon")]
+position = Vector2(129, 76)
+script = ExtResource("5_xqmah")
+polygon = NodePath("Polygon2D")
+num_verts = 25
+wobble_amount = 1.0
+radius = 50.0
+
+[node name="Polygon2D" type="Polygon2D" parent="Node2D"]
+color = Color(0.0602364, 0.385941, 0.476397, 1)
+texture_offset = Vector2(43.98, 0)
+texture_scale = Vector2(6.81, 6.81)
+polygon = PackedVector2Array(49.2646, 0.0603115, 48.0456, 12.4703, 43.5403, 24.19, 37.0753, 33.8157, 27.0267, 42.8998, 15.529, 48.3357, 3.19993, 50.0607, -9.4264, 49.6752, -21.5009, 45.6028, -32.1034, 39.1769, -40.6328, 29.984, -46.738, 18.754, -49.3008, 6.24765, -50.2277, -6.26857, -46.6933, -18.2809, -40.9908, -29.3694, -31.2176, -38.6877, -21.2203, -45.0716, -9.56401, -49.3533, 3.12105, -50.1544, 15.493, -48.2137, 27.0333, -41.9598, 36.4198, -34.0851, 43.4934, -24.4924, 48.5406, -12.1588)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Node2D"]
+position = Vector2(-112, 49)
+color = Color(0.0602364, 0.385941, 0.476397, 1)
+polygon = PackedVector2Array(49.8904, -0.244852, 48.5893, 11.9341, 43.3894, 24.3995, 35.8698, 34.5129, 26.6134, 42.1081, 16.1601, 47.5697, 3.86461, 49.8173, -9.06641, 48.8552, -20.7354, 45.5582, -32.3776, 39.1304, -40.8083, 28.4726, -46.454, 18.8935, -49.5969, 6.45472, -49.7746, -5.81237, -46.9833, -18.7645, -41.0369, -29.2689, -32.1094, -38.1588, -21.7733, -45.3489, -9.33743, -49.115, 2.77517, -49.8221, 15.2554, -47.7365, 26.4913, -41.9019, 36.6431, -33.4487, 43.7297, -24.8287, 48.4201, -12.5981)
+
+[node name="Line2D" type="Line2D" parent="." node_paths=PackedStringArray("target_node")]
+material = SubResource("ShaderMaterial_lv4on")
+position = Vector2(46, 91)
+points = PackedVector2Array(3, 7, 0, -1, 1, -9, 5, -16)
+script = ExtResource("7_74ii8")
+target_node = NodePath("../Node2D/Polygon2D")
+
+[node name="magazine" type="Line2D" parent="."]
+position = Vector2(-81, -15)
+points = PackedVector2Array(3, 7, 0, -1, 1, -9, 5, -16)

@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8mliufc7oxnq"]
+
+[ext_resource type="Script" path="res://cosines/ikclaude.gd" id="1_pg2kp"]
+[ext_resource type="Script" path="res://dot/p_3.gd" id="2_qq44y"]
+
+[node name="RollRegion" type="Node2D"]
+
+[node name="child" type="Marker2D" parent="." node_paths=PackedStringArray("p3")]
+script = ExtResource("1_pg2kp")
+p3 = NodePath("p3")
+flip_middle = true
+bone1_length = 94.44
+bone2_length = 70.485
+bone_color = Color(0.652108, 0.349496, 0.400272, 1)
+
+[node name="p2" type="Marker2D" parent="child" node_paths=PackedStringArray("par")]
+position = Vector2(-98, -42)
+script = ExtResource("2_qq44y")
+keystart = Vector2(0, 120.87)
+par = NodePath("..")
+
+[node name="p3" type="Marker2D" parent="child" node_paths=PackedStringArray("par")]
+position = Vector2(121, -18)
+script = ExtResource("2_qq44y")
+keystart = Vector2(0, 120.87)
+par = NodePath("..")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.72, 0.72)

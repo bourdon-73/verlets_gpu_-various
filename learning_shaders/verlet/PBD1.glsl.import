@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://cbf7umu7hs4bu"
+path="res://.godot/imported/PBD1.glsl-0fb038455ea624caad9ea87693cd6037.res"
+
+[deps]
+
+source_file="res://verlet/PBD1.glsl"
+dest_files=["res://.godot/imported/PBD1.glsl-0fb038455ea624caad9ea87693cd6037.res"]
+
+[params]
+

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyr5okc4wu37l"]
+
+[ext_resource type="Script" path="res://cosines/ikclaude.gd" id="1_hwsgn"]
+[ext_resource type="Script" path="res://dot/dot_domain.gd" id="1_ykyud"]
+[ext_resource type="Script" path="res://dot/p_3.gd" id="2_qvedw"]
+[ext_resource type="Script" path="res://dot/roller.gd" id="4_lk17i"]
+
+[node name="DotDomain" type="Node2D"]
+script = ExtResource("1_ykyud")
+body_orientation = 186.57
+
+[node name="child" type="Marker2D" parent="." node_paths=PackedStringArray("p3")]
+script = ExtResource("1_hwsgn")
+p3 = NodePath("p3")
+flip_middle = true
+bone1_length = 70.22
+bone2_length = 70.485
+bone_color = Color(0.652108, 0.349496, 0.400272, 1)
+
+[node name="p3" type="Marker2D" parent="child" node_paths=PackedStringArray("dot_domain", "par")]
+position = Vector2(46, -57)
+script = ExtResource("2_qvedw")
+keystart = Vector2(0, 120.87)
+dot_domain = NodePath("../..")
+par = NodePath("..")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.72, 0.72)
+
+[node name="roller?" type="Node2D" parent="." node_paths=PackedStringArray("dot_domain", "p1")]
+script = ExtResource("4_lk17i")
+dot_domain = NodePath("..")
+p1 = NodePath("../child/p3")
+t_vec = Vector2(-32.99, 60.14)
+metadata/_edit_lock_ = true

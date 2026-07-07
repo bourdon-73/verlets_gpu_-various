@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://d16o5ihaxcsec"]
+
+[ext_resource type="Script" path="res://hands/finger.gd" id="1_bi7o0"]
+[ext_resource type="Script" path="res://cosines/ikclaude.gd" id="2_2t0rk"]
+
+[node name="Finger" type="Node2D"]
+script = ExtResource("1_bi7o0")
+starter_end_pos = Vector2(74, 63)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="parent" type="Marker2D" parent="."]
+position = Vector2(51, 69)
+
+[node name="child" type="Marker2D" parent="." node_paths=PackedStringArray("p3")]
+script = ExtResource("2_2t0rk")
+p3 = NodePath("p3")
+flip_middle = true
+roll = 144.02
+bone1_length = 70.22
+bone2_length = 70.485
+bone_color = Color(0.652108, 0.349496, 0.400272, 1)
+
+[node name="p3" type="Marker2D" parent="child"]
+position = Vector2(74, 63)

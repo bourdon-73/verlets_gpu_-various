@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://da2pg663qqah4"
+path="res://.godot/imported/verlets.glsl-2be71fd9b14f9d15ecdcde040f723514.res"
+
+[deps]
+
+source_file="res://characters/verlets.glsl"
+dest_files=["res://.godot/imported/verlets.glsl-2be71fd9b14f9d15ecdcde040f723514.res"]
+
+[params]
+

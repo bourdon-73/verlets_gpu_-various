@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://cwocppkcv0qdd"]
+
+[ext_resource type="Texture2D" uid="uid://c7s6k1d68kgj0" path="res://shaders/2a2ea32d08cb7e46a7d62a527acd3566.jpg" id="1_gn5xu"]
+[ext_resource type="Shader" uid="uid://dwatve7ft04i5" path="res://shaders/masked_visu.tres" id="2_14nry"]
+[ext_resource type="Texture2D" uid="uid://d28j5jplai1rv" path="res://icon.svg" id="3_3ofpl"]
+[ext_resource type="Texture2D" uid="uid://bn88n7ljvhbh6" path="res://shaders/images.png" id="4_ve1ex"]
+[ext_resource type="Texture2D" uid="uid://b0u3hetpsx0bp" path="res://shaders/images (1).png" id="5_061b1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y00tq"]
+shader = ExtResource("2_14nry")
+shader_parameter/line_color = Color(0.213943, 0.193261, 0.062713, 1)
+shader_parameter/check_for = Color(0.213943, 0.193261, 0.062713, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lve32"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n7ar8"]
+shader = ExtResource("2_14nry")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/check_for = Color(1, 0, 0, 1)
+
+[sub_resource type="Curve" id="Curve_y1w0m"]
+_data = [Vector2(0, 0.197802), 0.0, 0.0, 0, 0, Vector2(0.405263, 1), 0.509247, 0.509247, 0, 0, Vector2(0.99999, 0.241758), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="Node2D" type="Node2D"]
+
+[node name="2a2Ea32d08Cb7e46a7d62a527Acd3566" type="Sprite2D" parent="."]
+position = Vector2(480, 176)
+texture = ExtResource("1_gn5xu")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_y00tq")
+position = Vector2(656, 101)
+texture = ExtResource("3_3ofpl")
+
+[node name="Icon" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(828, 47)
+texture = ExtResource("3_3ofpl")
+
+[node name="Images" type="Sprite2D" parent="."]
+position = Vector2(1034, 90)
+texture = ExtResource("4_ve1ex")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-195, 175)
+
+[node name="Line2D2" type="Line2D" parent="Node2D"]
+material = SubResource("ShaderMaterial_lve32")
+position = Vector2(73, -96)
+points = PackedVector2Array(219, 127, 288, 125, 325, 137, 363, 154)
+default_color = Color(0, 0, 0, 1)
+texture = ExtResource("5_061b1")
+texture_mode = 2
+antialiased = true
+
+[node name="Line2D3" type="Line2D" parent="Node2D"]
+material = SubResource("ShaderMaterial_n7ar8")
+position = Vector2(57, -120)
+points = PackedVector2Array(266, 81, 288, 125, 291, 166, 290, 208)
+width = 21.74
+width_curve = SubResource("Curve_y1w0m")
+texture = ExtResource("5_061b1")
+texture_mode = 2
+antialiased = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(2.29, 2.29)

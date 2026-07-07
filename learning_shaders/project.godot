@@ -1,0 +1,31 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="learning_"
+config/tags=PackedStringArray("learning")
+run/main_scene="res://verlet/verlet_ville.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=312
+window/size/always_on_top=true
+window/stretch/mode="viewport"
+window/vsync/vsync_mode=0
+
+[physics]
+
+common/physics_ticks_per_second=30
+common/max_physics_steps_per_frame=2
+2d/physics_engine="Rapier2D"

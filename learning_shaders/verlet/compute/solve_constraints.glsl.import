@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://cnyia6b3jcxls"
+path="res://.godot/imported/solve_constraints.glsl-1357f0e3203e72d2c75f0d1a93952509.res"
+
+[deps]
+
+source_file="res://verlet/compute/solve_constraints.glsl"
+dest_files=["res://.godot/imported/solve_constraints.glsl-1357f0e3203e72d2c75f0d1a93952509.res"]
+
+[params]
+

@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://drbvhue0k22lf"]
+
+[ext_resource type="Script" path="res://path2d/path_pueblo.gd" id="1_8fu66"]
+[ext_resource type="Script" path="res://cosines/ikclaude.gd" id="1_ueq4t"]
+[ext_resource type="Script" path="res://dot/p_3.gd" id="2_6a2xj"]
+
+[sub_resource type="Curve2D" id="Curve2D_uid2v"]
+_data = {
+"points": PackedVector2Array(56.25, 14, -56.25, -14, 56, -42, -1, 0, 1, 0, 0, 0)
+}
+point_count = 2
+
+[node name="PathPueblo" type="Node2D" node_paths=PackedStringArray("path", "p1", "p2", "p3")]
+script = ExtResource("1_8fu66")
+path = NodePath("Path2D")
+p1 = NodePath("child")
+p2 = NodePath("child/p2")
+p3 = NodePath("child/p3")
+
+[node name="child" type="Marker2D" parent="." node_paths=PackedStringArray("p3")]
+script = ExtResource("1_ueq4t")
+p3 = NodePath("p3")
+flip_middle = true
+bone1_length = 70.22
+bone2_length = 70.485
+bone_color = Color(0.652108, 0.349496, 0.400272, 1)
+
+[node name="p2" type="Marker2D" parent="child" node_paths=PackedStringArray("par")]
+position = Vector2(-1, -56)
+script = ExtResource("2_6a2xj")
+keystart = Vector2(0, 120.87)
+par = NodePath("..")
+
+[node name="p3" type="Marker2D" parent="child" node_paths=PackedStringArray("par")]
+position = Vector2(1, -80)
+script = ExtResource("2_6a2xj")
+keystart = Vector2(0, 120.87)
+par = NodePath("..")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.72, 0.72)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_uid2v")

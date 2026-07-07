@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://j8iupgbger8y"]
+
+[ext_resource type="Script" path="res://physics_server/spawn_rigid2.gd" id="1_qg07f"]
+[ext_resource type="Script" path="res://verlet/label.gd" id="2_2syrd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32vvm"]
+size = Vector2(1000, 100)
+
+[node name="KineKountry" type="Node2D"]
+script = ExtResource("1_qg07f")
+spawn_delay = 0.005
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(221, 227)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_32vvm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(206, 63)
+zoom = Vector2(0.15, 0.15)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer" node_paths=PackedStringArray("residence")]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("2_2syrd")
+residence = NodePath("../../..")

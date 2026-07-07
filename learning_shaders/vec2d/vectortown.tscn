@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctf17j5vcbxpa"]
+
+[ext_resource type="Script" path="res://vec2d/vectortown.gd" id="1_v57rt"]
+[ext_resource type="Texture2D" uid="uid://d28j5jplai1rv" path="res://icon.svg" id="2_4d7me"]
+
+[node name="vectortown" type="Node2D"]
+script = ExtResource("1_v57rt")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="root_parent" type="Marker2D" parent="."]
+rotation = -5.26566
+
+[node name="end_parent" type="Marker2D" parent="root_parent"]
+position = Vector2(20, -69)
+rotation = 0.23911
+
+[node name="root_child" type="Marker2D" parent="root_parent/end_parent"]
+rotation = -0.359538
+
+[node name="end_child" type="Marker2D" parent="root_parent/end_parent/root_child"]
+position = Vector2(54, -29)
+
+[node name="Icon" type="Sprite2D" parent="root_parent/end_parent/root_child/end_child"]
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_4d7me")
+
+[node name="Icon2" type="Sprite2D" parent="root_parent/end_parent/root_child"]
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_4d7me")
+
+[node name="Icon3" type="Sprite2D" parent="root_parent/end_parent"]
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_4d7me")
+
+[node name="Icon4" type="Sprite2D" parent="root_parent"]
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_4d7me")

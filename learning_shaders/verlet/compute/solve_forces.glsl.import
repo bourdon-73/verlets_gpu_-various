@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://j3t8xr4apfex"
+path="res://.godot/imported/solve_forces.glsl-ea613df2be5c093cc219cc087fdfc7c1.res"
+
+[deps]
+
+source_file="res://verlet/compute/solve_forces.glsl"
+dest_files=["res://.godot/imported/solve_forces.glsl-ea613df2be5c093cc219cc087fdfc7c1.res"]
+
+[params]
+

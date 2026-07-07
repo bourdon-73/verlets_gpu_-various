@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3fitkva13svf"]
+
+[ext_resource type="Script" path="res://physics_server/rigid_object.gd" id="1_jasny"]
+
+[node name="RigidObject" type="Node2D"]
+script = ExtResource("1_jasny")

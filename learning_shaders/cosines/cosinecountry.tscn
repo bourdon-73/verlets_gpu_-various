@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdpqb1ipbrwvc"]
+
+[ext_resource type="Script" path="res://cosines/ikclaude.gd" id="1_kyelu"]
+
+[node name="cosinecountry" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="parent" type="Marker2D" parent="." node_paths=PackedStringArray("p3")]
+position = Vector2(51, 69)
+script = ExtResource("1_kyelu")
+p3 = NodePath("child")
+roll = 90.0
+bone1_length = 125.875
+bone2_length = 76.395
+bone_color = Color(0.675448, 0.846374, 0.864773, 1)
+
+[node name="child" type="Marker2D" parent="parent" node_paths=PackedStringArray("p3", "parent_limb")]
+position = Vector2(-5, -88)
+script = ExtResource("1_kyelu")
+p3 = NodePath("p3")
+flip_middle = true
+parent_limb = NodePath("..")
+roll = 144.02
+bone1_length = 70.22
+bone2_length = 70.485
+bone_color = Color(0.652108, 0.349496, 0.400272, 1)
+
+[node name="p3" type="Marker2D" parent="parent/child"]
+position = Vector2(-72, -78)

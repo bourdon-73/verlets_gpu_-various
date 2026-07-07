@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://dt1p8wbekxjtn"
+path="res://.godot/imported/detect_collisions.glsl-b7e133b213e31b47702a099c13f565fe.res"
+
+[deps]
+
+source_file="res://verlet/compute/detect_collisions.glsl"
+dest_files=["res://.godot/imported/detect_collisions.glsl-b7e133b213e31b47702a099c13f565fe.res"]
+
+[params]
+

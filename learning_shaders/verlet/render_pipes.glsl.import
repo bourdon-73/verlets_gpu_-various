@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://buqo312rs8y0p"
+path="res://.godot/imported/render_pipes.glsl-f0cede62f42dc195a8880c8bc23d8021.res"
+
+[deps]
+
+source_file="res://verlet/render_pipes.glsl"
+dest_files=["res://.godot/imported/render_pipes.glsl-f0cede62f42dc195a8880c8bc23d8021.res"]
+
+[params]
+

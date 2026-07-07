@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://bkynkimoq6vap"
+path="res://.godot/imported/compute_shader2.glsl-0d9a88873d1bdfe821b551ad72137678.res"
+
+[deps]
+
+source_file="res://verlet/compute_shader2.glsl"
+dest_files=["res://.godot/imported/compute_shader2.glsl-0d9a88873d1bdfe821b551ad72137678.res"]
+
+[params]
+
